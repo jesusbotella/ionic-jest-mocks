@@ -1,0 +1,35 @@
+{
+  "name": "ionic-jest-mocks",
+  "version": "1.0.0",
+  "description": "Ionic2+ Jest Test",
+  "repository": "git@github.com:stonelasley/ionic-mocks.git",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "test": "karma start",
+    "build": "rimraf dist && tsc -d",
+    "lint": "tslint ./src/**/*.ts",
+    "version": "git add .",
+    "prepublish": "npm run build",
+    "postversion": "git push && git push --tags && npm publish",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "devDependencies": {
+    "@types/jest": "^20.0.8",
+    "@types/node": "^8.0.14",
+    "cz-conventional-changelog": "^2.0.0",
+    "jest": "^21.1.0",
+    "rimraf": "^2.6.1",
+    "rxjs": "^5.4.2",
+    "semantic-release": "^6.3.6",
+    "tslint": "^5.5.0",
+    "tslint-ionic-rules": "0.0.11",
+    "typescript": "^2.0.9"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
